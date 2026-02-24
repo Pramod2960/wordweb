@@ -10,22 +10,15 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export default function HomeSearchWord() {
   const [open, setOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const { data: searchResults = [] } = useSearchWords(searchQuery);
+  const { data } = useSearchWords(searchQuery);
+  const searchResults = data?.slice(0, 3) ?? [];
+
   const router = useRouter();
 
   return (
@@ -41,7 +34,7 @@ export default function HomeSearchWord() {
           onValueChange={setSearchQuery}
         />
 
-        <CommandList className="max-h-[200px] overflow-y-auto">
+        <CommandList className="overflow-visible max-h-none">
           {searchQuery && searchResults.length === 0 && (
             <CommandEmpty>No words found.</CommandEmpty>
           )}
