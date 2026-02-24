@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build-prisma": "npx prisma generate && next build --turbopack"
   },
   "dependencies": {
     "@base-ui/react": "^1.2.0",
