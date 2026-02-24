@@ -41,7 +41,7 @@ export default function SearchWord() {
         }}
       >
         <DialogTrigger asChild>
-          <Button variant="outline" className="w-full">
+          <Button variant="outline" className="w-full rounded-full">
             <Search className="mr-2 size-4" />
             Search Words
           </Button>
