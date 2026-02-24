@@ -1,0 +1,34 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model words {
+   id   Int   @id @default(autoincrement())
+   uuid  String? @default(uuid())
+   title String
+   pos   String?
+   gloss String?
+   e_usage String?
+   sanskrit String?
+   s_usage String?
+   context  String?
+   reference String?
+   transliteration String?
+   field_1 String?
+   field_2 String?
+   field_3 String?
+   field_4 String?
+   field_5 String?
+}
+
+model user {
+   id String @id @default(cuid())
+   username String
+   password String
+}
+
