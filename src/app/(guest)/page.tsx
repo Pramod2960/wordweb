@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Suspense } from "react";
 import Link from "next/link";
 import { CarouselWords } from "@/featurers/home/component/carousel-page";
+import HomeSearchWord from "@/featurers/home/component/home-search-word";
 
 const GuestPage = () => {
   return (
@@ -49,11 +50,7 @@ const GuestPage = () => {
           >
             explore new words
           </div>
-          <div className="animate-slidein [--slidein-delay:700ms] opacity-0">
-            {/* <Suspense fallback={<HomePageDummy />}>
-              <HomeSearchBox />
-             </Suspense>  */}
-          </div>
+            <HomeSearchWord />
         </div>
         <div
           className="animate-slidein [--slidein-delay:700ms] opacity-0
