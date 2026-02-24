@@ -56,7 +56,7 @@ export default function Word({ id }: { id: string }) {
           <h2 className="text-3xl font-bold text-blue-600 justify-between flex items-center">
             <div className="">{word?.sanskrit}</div>
             <div>
-            <SanskritSuggestion wordId={word?.id} />
+              <SanskritSuggestion wordId={word?.id} />
             </div>
           </h2>
 
