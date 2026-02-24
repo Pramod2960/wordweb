@@ -40,7 +40,8 @@ export default function HomeSearchWord() {
           )}
 
           {searchResults.length > 0 && (
-            <CommandGroup heading="Words">
+            // <CommandGroup heading="Words">
+            <div>
               {searchResults.map((w: any) => (
                 <CommandItem
                   key={w.id}
@@ -53,7 +54,8 @@ export default function HomeSearchWord() {
                   {w.title}
                 </CommandItem>
               ))}
-            </CommandGroup>
+            </div>
+            // </CommandGroup>
           )}
         </CommandList>
       </Command>

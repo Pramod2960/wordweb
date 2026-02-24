@@ -10,9 +10,9 @@ import HomeSearchWord from "@/featurers/home/component/home-search-word";
 const GuestPage = () => {
   return (
     <>
-      <div className="h-full flex flex-col items-center justify-center">
+      <div className="h-full flex flex-col items-center justify-center mb-5">
         <div className="flex flex-col items-center justify-center ">
-          <div className="flex flex-row px-10 md:gap-x-5 items-center justify-center py-5 ">
+          <div className="flex flex-row px-10 md:gap-x-5 items-center justify-center pt-5 ">
             <Link href="https://www.sanskrit.nic.in/" target="_blank">
               <Image
                 height={100}
@@ -24,10 +24,8 @@ const GuestPage = () => {
             </Link>
 
             <h1
-              className="  animate-slidein [--slidein-delay:300ms] opacity-0
-        mb-6 scroll-m-20 
-        text-slate-800 font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center dark:text-white
-        "
+              className="  animate-slidein [--slidein-delay:300ms] 
+              opacity-0  mb-6 scroll-m-20  text-slate-800 font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center dark:text-white "
             >
               English-Sanskrit (Wordweb)
             </h1>
@@ -44,13 +42,13 @@ const GuestPage = () => {
           </div>
           <div
             className=" animate-slidein [--slidein-delay:500ms] opacity-0
-          text-3xl md:text-4xl 
-         bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white px-4 p-2 rounded-full pb-4 w-fit mb-3
-         "
+            text-3xl md:text-4xl  bg-linear-to-r from-fuchsia-600 
+            to-pink-600 text-white px-4 p-2 rounded-full pb-4 w-fit mb-3
+            "
           >
             explore new words
           </div>
-            <HomeSearchWord />
+          <HomeSearchWord />
         </div>
         <div
           className="animate-slidein [--slidein-delay:700ms] opacity-0
