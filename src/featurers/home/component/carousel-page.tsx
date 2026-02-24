@@ -25,41 +25,41 @@ export function CarouselWords() {
   );
 
   const data = [
-    { id: "151", title: "Ablation", pos: "noun", sankrit: "अङ्गांशछेदः" },
+    { id: "6", title: "Ablation", pos: "noun", sankrit: "अङ्गांशछेदः" },
 
     {
-      id: "240",
+      id: "257",
       title: "Back order",
       pos: "noun",
       sankrit: "आरक्षिताभियाचनम्",
     },
     {
-      id: "351",
+      id: "613",
       title: "Chocolatey",
       pos: "adjective",
       sankrit: "चाकलेहगन्धितम्",
     },
     {
-      id: "533",
+      id: "1078",
       title: "EdTech",
       pos: "noun",
       sankrit: "प्रौद्योगिकाश्रितशिक्षा",
     },
     { id: "798", title: "Karmic", pos: "adjective", sankrit: "कार्मिकम्" },
     {
-      id: "904",
-      title: "Misgendering",
+      id: "1872",
+      title: "Misgender",
       pos: "adjective",
       sankrit: "लिङ्गान्तरम्",
     },
     {
-      id: "932",
+      id: "1952",
       title: "Neurosurgeon",
       pos: "Noun",
       sankrit: " नाडीतन्त्रज्ञः",
     },
     {
-      id: "1260",
+      id: "2793",
       title: "Whatevs",
       pos: "Interjection",
       sankrit: " यथाकथञ्चित्",

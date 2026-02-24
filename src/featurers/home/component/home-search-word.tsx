@@ -5,7 +5,6 @@ import { useSearchWords } from "@/featurers/hooks/use-words";
 import {
   Command,
   CommandEmpty,
-  CommandGroup,
   CommandInput,
   CommandItem,
   CommandList,
