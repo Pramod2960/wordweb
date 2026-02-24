@@ -78,7 +78,7 @@ export function CarouselWords() {
           <Link href={`/word/${item.id}`} key={index}>
             <CarouselItem className=" md:basis-1/2 ">
               <Card
-                className="bg-gradient-to-tr from-blue-600 to-sky-300
+                className="bg-linear-to-tr from-blue-600 to-sky-300
              shadow-md w-52"
               >
                 <CardHeader>

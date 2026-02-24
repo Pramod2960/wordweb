@@ -50,7 +50,12 @@ export default function HomeSearchWord() {
                     router.push(`/word/${w.id}`);
                   }}
                 >
-                  {w.title}
+                  {w.title}{" "}
+                  {w.sanskrit && (
+                    <span className="text-sm text-muted-foreground">
+                      ({w.sanskrit})
+                    </span>
+                  )}
                 </CommandItem>
               ))}
             </div>

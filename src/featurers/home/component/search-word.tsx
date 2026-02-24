@@ -41,13 +41,13 @@ export default function SearchWord() {
         }}
       >
         <DialogTrigger asChild>
-          <Button  variant="outline" className="w-full">
+          <Button variant="outline" className="w-full">
             <Search className="mr-2 size-4" />
-            Search Words</Button>
+            Search Words
+          </Button>
         </DialogTrigger>
 
         <DialogContent className="p-0 overflow-hidden min-h-2xl">
-          
           {/* ✅ TITLE */}
           <DialogHeader className="px-4 pt-4">
             <DialogTitle>Search Words</DialogTitle>
@@ -78,7 +78,12 @@ export default function SearchWord() {
                       }}
                       className="cursor-pointer"
                     >
-                      {w.title}
+                      {w.title}{" "}
+                      {w.sanskrit && (
+                        <span className="text-sm text-muted-foreground">
+                          ({w.sanskrit})
+                        </span>
+                      )}
                     </CommandItem>
                   ))}
                 </CommandGroup>

@@ -33,10 +33,23 @@ export const wordsRouter = createTRPCRouter({
     .query(({ ctx, input }) => {
       return prisma.words.findMany({
         where: {
-          title: {
-            contains: input.query,
-            mode: "insensitive",
-          },
+          OR: [
+            {
+              title: {
+                startsWith: input.query,
+                mode: "insensitive",
+              },
+            },
+            {
+              sanskrit: {
+                startsWith: input.query,
+                mode: "insensitive",
+              },
+            },
+          ],
+        },
+        orderBy: {
+          title: "asc",
         },
         take: 10,
       });
