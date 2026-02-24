@@ -92,11 +92,11 @@ export function CarouselWords() {
                   </CardDescription>
 
                   <CardTitle className="text-white text-base font-normal">
-                    {" "}
                     {item.sankrit}
                   </CardTitle>
+                  
                 </CardHeader>
-                <CardContent></CardContent>
+                {/* <CardContent></CardContent> */}
               </Card>
             </CarouselItem>
           </Link>

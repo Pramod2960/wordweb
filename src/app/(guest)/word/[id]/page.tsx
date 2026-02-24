@@ -1,4 +1,3 @@
-
 import { HydrateClient } from "@/trpc/server";
 import { ErrorBoundary } from "react-error-boundary";
 import { Suspense } from "react";
@@ -20,7 +19,13 @@ async function Page({ params }: PageProps) {
     <div>
       <HydrateClient>
         <ErrorBoundary fallback={"error"}>
-          <Suspense fallback={<Spinner />}>
+          <Suspense
+            fallback={
+              <div className="w-full h-60 flex items-center justify-center text-muted-foreground  ">
+                <Spinner /> loading...
+              </div>
+            }
+          >
             <Word id={id} />
           </Suspense>
         </ErrorBoundary>
