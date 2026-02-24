@@ -4,6 +4,7 @@ import {
   useSuspenseQuery,
   useQuery,
 } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 
 export const useSuspenseWord = (id: string) => {
   const trpc = useTRPC();
@@ -16,12 +17,19 @@ export const useSearchWords = (query: string) => {
 };
 
 export const useSuspenseWords = () => {
-    const trpc = useTRPC();
-    return useSuspenseQuery(trpc.words.getMany.queryOptions());
-}
+  const trpc = useTRPC();
+  return useSuspenseQuery(trpc.words.getMany.queryOptions());
+};
 
 export const useSuspenseAlphabet = (alphabet: string) => {
-    const trpc = useTRPC();
-    return useSuspenseQuery(trpc.words.byAlphabet.queryOptions({ alphabet }));
-}
+  const trpc = useTRPC();
+  return useSuspenseQuery(trpc.words.byAlphabet.queryOptions({ alphabet }));
+};
 
+export const useSuggestSanskrit = () => {
+  const trpc = useTRPC();
+
+  return useMutation(
+    trpc.words.suggestSanskrit.mutationOptions()
+  );
+};

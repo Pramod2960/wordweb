@@ -2,13 +2,13 @@
 
 import { useSuspenseWord } from "@/featurers/hooks/use-words";
 import Link from "next/link";
+import { SanskritSuggestion } from "./suggestion-dailog";
 
 export default function Word({ id }: { id: string }) {
   const { data: word } = useSuspenseWord(id);
 
   return (
     <div className="max-w-5xl mx-auto p-6">
-
       {/* 🔹 Breadcrumb */}
       <Link
         href="/"
@@ -18,27 +18,19 @@ export default function Word({ id }: { id: string }) {
       </Link>
 
       <div className="rounded-xl border bg-gray-50 shadow-sm overflow-hidden">
-
         {/* 🔹 ENGLISH BLOCK */}
         <div className="p-8 space-y-4">
+          <h1 className="text-4xl font-bold text-blue-600">{word?.title}</h1>
 
-          <h1 className="text-4xl font-bold text-blue-600">
-            {word?.title}
-          </h1>
-
-          <p className="italic text-gray-500">
-            {word?.pos} – S1
-          </p>
+          <p className="italic text-gray-500">{word?.pos} – S1</p>
 
           <p>
-            <span className="font-semibold">Gloss :</span>{" "}
-            {word?.gloss}
+            <span className="font-semibold">Gloss :</span> {word?.gloss}
           </p>
 
           {word?.e_usage && (
             <p>
-              <span className="font-semibold">Usage :</span>{" "}
-              {word?.e_usage}
+              <span className="font-semibold">Usage :</span> {word?.e_usage}
             </p>
           )}
 
@@ -61,26 +53,25 @@ export default function Word({ id }: { id: string }) {
 
         {/* 🔹 SANSKRIT BLOCK */}
         <div className="p-8 space-y-4">
-
-          <h2 className="text-3xl font-bold text-blue-600">
-            {word?.sanskrit}
+          <h2 className="text-3xl font-bold text-blue-600 justify-between flex items-center">
+            <div className="">{word?.sanskrit}</div>
+            <div>
+            <SanskritSuggestion wordId={word?.id} />
+            </div>
           </h2>
 
           {word?.s_usage && (
             <p>
-              <span className="font-semibold">Usage :</span>{" "}
-              {word?.s_usage}
+              <span className="font-semibold">Usage :</span> {word?.s_usage}
             </p>
           )}
 
           {word?.context && (
             <p>
-              <span className="font-semibold">Context :</span>{" "}
-              {word?.context}
+              <span className="font-semibold">Context :</span> {word?.context}
             </p>
           )}
         </div>
-
       </div>
     </div>
   );

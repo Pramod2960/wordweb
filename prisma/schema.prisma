@@ -24,6 +24,7 @@ model words {
    field_3 String?
    field_4 String?
    field_5 String?
+   suggestion String[] @default([])
 }
 
 model user {

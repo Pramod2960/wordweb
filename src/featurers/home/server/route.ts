@@ -58,4 +58,22 @@ export const wordsRouter = createTRPCRouter({
   getMany: publicProcedure.query(({ ctx }) => {
     return prisma.words.findMany({});
   }),
+
+  suggestSanskrit: publicProcedure
+    .input(
+      z.object({
+        wordId: z.number(),
+        suggestion: z.string().min(1),
+      }),
+    )
+    .mutation(async ({ ctx, input }) => {
+      return prisma.words.update({
+        where: { id: input.wordId },
+        data: {
+          suggestion: {
+            push: input.suggestion,
+          },
+        },
+      });
+    }),
 });
