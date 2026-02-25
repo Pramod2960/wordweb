@@ -40,7 +40,7 @@ export default function Word({ id }: { id: string }) {
               <a
                 href={word?.reference}
                 target="_blank"
-                className="text-blue-600 underline"
+                className="text-blue-600 underline break-all"
               >
                 {word?.reference}
               </a>
