@@ -18,7 +18,7 @@ export const Navbar = () => {
         </div>
 
         {/* Main Search Bar - Central Focus */}
-        <div className="flex-1 max-w-xl md:max-w-2xl mx-2 md:mx-4">
+        <div className=" max-w-xl md:max-w-2xl mx-2 md:mx-4">
           <SearchWord />
         </div>
 
