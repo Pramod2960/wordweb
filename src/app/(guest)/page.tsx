@@ -63,8 +63,31 @@ export default function GuestPage() {
       {/* 🌟 MAIN CONTENT */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-6">
         {/* LOGOS + TITLE */}
-        <div className="flex items-center gap-6 pt-5 flex-wrap justify-center">
-          <Link href="https://www.sanskrit.nic.in/" target="_blank">
+        <div className="flex flex-col md:flex-row items-center gap-6 pt-5 justify-center">
+          {/* Mobile: Both logos together */}
+          <div className="flex md:hidden items-center gap-6">
+            <Link href="https://www.sanskrit.nic.in/" target="_blank">
+              <Image
+                src="/central_sanskrit_unversity.jpg"
+                alt="logo"
+                width={90}
+                height={90}
+                className="animate-slidein [--slidein-delay:1200ms] opacity-0"
+              />
+            </Link>
+            <Link href="https://www.amity.edu/gurugram/" target="_blank">
+              <Image
+                src="/amity.png"
+                alt="logo"
+                width={90}
+                height={90}
+                className="animate-slidein [--slidein-delay:1200ms] opacity-0"
+              />
+            </Link>
+          </div>
+
+          {/* Desktop: First logo */}
+          <Link href="https://www.sanskrit.nic.in/" target="_blank" className="hidden md:block">
             <Image
               src="/central_sanskrit_unversity.jpg"
               alt="logo"
@@ -78,7 +101,8 @@ export default function GuestPage() {
             English-Sanskrit <span className="text-blue-600">(Wordweb)</span>
           </h1>
 
-          <Link href="https://www.amity.edu/gurugram/" target="_blank">
+          {/* Desktop: Second logo */}
+          <Link href="https://www.amity.edu/gurugram/" target="_blank" className="hidden md:block">
             <Image
               src="/amity.png"
               alt="logo"

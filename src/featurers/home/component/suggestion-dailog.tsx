@@ -25,6 +25,10 @@ export function SanskritSuggestion({ wordId }: { wordId: number | undefined }) {
       toast.error("Word ID is missing");
       return;
     }
+    if (text.trim().length === 0) {
+      toast.error("Please enter at least 1 character");
+      return;
+    }
     await mutation.mutateAsync({
       wordId,
       suggestion: text,
@@ -54,7 +58,7 @@ export function SanskritSuggestion({ wordId }: { wordId: number | undefined }) {
           onChange={(e) => setText(e.target.value)}
         />
 
-        <Button onClick={submit} disabled={mutation.isPending}>
+        <Button onClick={submit} disabled={mutation.isPending || text.trim().length === 0}>
           Submit
         </Button>
       </DialogContent>
