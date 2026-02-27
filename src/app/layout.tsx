@@ -5,6 +5,7 @@ import { TRPCReactProvider } from "@/trpc/client";
 import { Navbar } from "@/featurers/home/component/navbar";
 import { Footer } from "@/featurers/home/component/footer";
 import { Toaster } from "@/components/ui/sonner";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,15 +36,17 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <TRPCReactProvider>
-          <Navbar />
-          <main
-            className="relative flex-grow bg-[url('/background_image.svg')] bg-no-repeat bg-cover bg-right-top z-0 mt-[55px]
-            flex flex-col items-center min-h-[90vh] "
-          >
-            {children}
-            <Toaster />
-          </main>
-          <Footer />
+          <NuqsAdapter>
+            <Navbar />
+            <main
+              className="relative flex-grow bg-[url('/background_image.svg')] bg-no-repeat bg-cover bg-right-top z-0 mt-[55px]
+              flex flex-col items-center min-h-[90vh] "
+            >
+              {children}
+              <Toaster />
+            </main>
+            <Footer />
+          </NuqsAdapter>
         </TRPCReactProvider>
       </body>
     </html>
